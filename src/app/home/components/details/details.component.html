@@ -1,0 +1,34 @@
+<ion-header [translucent]= "true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="property">
+    Property {{property.id}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]= "true" class="ion-padding">
+  <ion-grid *ngIf="property">
+    <ion-row>
+      <ion-select label="Solid select" label-placement="floating" fill="solid" [(ngModel)]="property.type">
+        <ion-select-option value="House">Maison</ion-select-option>
+        <ion-select-option value="Appartement">Appartement</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <ion-input label="Rooms" label-placement="floating" fill="solid" placeholder="Rooms" [(ngModel)]="property.nbRoom"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input label="Price" label-placement="floating" fill="solid" placeholder="Price" [(ngModel)]="property.cost"></ion-input>
+    </ion-row>
+
+    <input type="file" id="inputImage" accept="image/*" style="display:none" (change)="onImageChange($event)">
+
+    <ion-img
+      src={{property.path}}
+      alt="Property Image"
+      (click)="openImageSelector()"
+    ></ion-img>
+  </ion-grid>
+</ion-content>

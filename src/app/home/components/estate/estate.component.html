@@ -1,0 +1,14 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title>
+    Stock
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="false" class="ion-padding">
+  <ion-grid>
+    <app-property *ngFor="let item of estate"
+      [property]=item>
+    </app-property>
+  </ion-grid>
+</ion-content>

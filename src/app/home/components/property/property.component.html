@@ -1,0 +1,12 @@
+<ion-card (click)="navigation()">
+    <ion-card-content>
+      <ion-thumbnail slot='start'>
+        <img alt="Property image" src="{{property.path}}">
+      </ion-thumbnail>
+      <ion-label>
+        <ion-card-subtitle>{{property.type}} {{property.nbRoom}} Rooms</ion-card-subtitle>
+        <ion-card-title>Property {{property.id}}</ion-card-title>
+        <p>{{property.cost}}€</p>
+      </ion-label>
+    </ion-card-content>
+</ion-card>
